@@ -23,5 +23,9 @@ services:
       - "8000:8000"
     depends_on:
       - thinking_mobile_db
+  thinking_mobile_memcached:
+    image: memcached:1.6.9
+    ports:
+        - "11211:11211"
 volumes:
   mysqldata:

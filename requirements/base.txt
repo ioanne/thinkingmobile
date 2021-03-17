@@ -3,3 +3,6 @@ django==2.2.19 # https://www.djangoproject.com/
 
 # MySQL
 mysql-connector-python==8.0.23
+
+# Memcached
+python-memcached==1.59
