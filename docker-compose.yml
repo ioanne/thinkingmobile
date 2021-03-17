@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  thinking_mobile_db:
+    image: mysql:8.0.23
+    environment:
+      MYSQL_ROOT_PASSWORD: "thinking_mobile"
+      MYSQL_DATABASE: "thinking_mobile"
+      MYSQL_USER: "thinking_mobile"
+      MYSQL_PASSWORD: "thinking_mobile"
+    ports:
+      - '3306:3306'
+    restart: always
+    volumes:
+      - mysqldata:/var/lib/mysql
+  thinking_mobile_web:
+    build: .
+    container_name: thinking_mobile_web
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - thinking_mobile_db
+volumes:
+  mysqldata:
