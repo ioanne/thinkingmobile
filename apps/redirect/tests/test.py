@@ -6,15 +6,15 @@ from apps.redirect.factories import Redirect
 class RedirectTestCase(TestCase):
 
     def setUp(self):
-        self.redirect = Redirect.objects.create(
+        self.redirect = Redirect.active_objects.create(
             key='123456',
             url='https://www.google.com.ar/images/123456/'
         )
-        Redirect.objects.create(
+        Redirect.active_objects.create(
             key='56789',
             url='https://www.google.com.ar/images/56789/'
         )
-        Redirect.objects.create(
+        Redirect.active_objects.create(
             key='445566',
             url='https://www.google.com.ar/images/445566/',
             active=False

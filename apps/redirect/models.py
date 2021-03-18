@@ -18,8 +18,8 @@ class Redirect(BoostedModel):
     url = models.URLField()
     active = models.BooleanField(default=True)
 
-    objects = RedirectManager()
-    objects_all = models.Manager()
+    objects = models.Manager()
+    active_objects = RedirectManager()
 
     @classmethod
     def get_redirect(cls, key):
@@ -37,7 +37,7 @@ class Redirect(BoostedModel):
         """Method to cache all active redirects.
         :return data: dict."""
         cache_key = 'all_active_redirects'
-        data = dict(Redirect.objects.values_list('key', 'url'))
+        data = dict(Redirect.active_objects.values_list('key', 'url'))
         cache.set(cache_key, data, 60 * 60 * 24)
         logger.info('All active redirects are cached.')
         return data
