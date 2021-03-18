@@ -92,6 +92,9 @@ DATABASES = {
         'PASSWORD': 'thinking_mobile',
         'HOST': 'thinking_mobile_db',
         'PORT': '3306',
+        'TEST': {
+            'NAME': 'test_thinking_mobile',
+        },
     }
 }
 
