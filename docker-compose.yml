@@ -13,6 +13,7 @@ services:
     restart: always
     volumes:
       - mysqldata:/var/lib/mysql
+      - ./db-init-scripts:/docker-entrypoint-initdb.d
   thinking_mobile_web:
     build: .
     container_name: thinking_mobile_web
