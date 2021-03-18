@@ -34,3 +34,5 @@ docker-compose exec thinking_mobile_web python3 manage.py createsuperuser
 doco exec thinking_mobile_web python3 manage.py test apps.redirect.tests.test.RedirectTestCase
 ```
 
+### Endpoint
+localhost:8000/redirect/?key=[la_clave_a_buscar]
