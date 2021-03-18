@@ -14,7 +14,7 @@ class RedirectManager(models.Manager):
 
 
 class Redirect(BoostedModel):
-    key = models.CharField(max_length=254)
+    key = models.CharField(max_length=254, unique=True)
     url = models.URLField()
     active = models.BooleanField(default=True)
 
