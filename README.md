@@ -1,6 +1,6 @@
 # Django Thinking Mobile
 
-## A continuación se detalla como correr el código usando docker-compose.
+### A continuación se detalla como correr el código usando docker-compose.
 
 
 
