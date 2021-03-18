@@ -35,4 +35,10 @@ doco exec thinking_mobile_web python3 manage.py test apps.redirect.tests.test.Re
 ```
 
 ### Endpoint
+```
 localhost:8000/redirect/?key=[la_clave_a_buscar]
+```
+
+Si la key no existe, devuelve 404. (Not found)
+Si no se ingresa la key, devuelve 400 (Bad Request)
+Si la encuentra devuelve 200 y en el body {"key": [tuclave], "url": [tuUrl]
