@@ -29,7 +29,7 @@ docker-compose exec thinking_mobile_web python3 manage.py createsuperuser
 ```
 
 
-Correr los tests
+### Correr los tests
 ```
 doco exec thinking_mobile_web python3 manage.py test apps.redirect.tests.test.RedirectTestCase
 ```
